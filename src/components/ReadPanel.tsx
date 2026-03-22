@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const ReadPanel = ({
-  account, owner, tokenName, symbol, decimals,
+   owner, tokenName, symbol, decimals,
   onCheckBalance, onCheckRole, hasRole, hasRoleLoading
 }: Props) => {
   const [balAddr, setBalAddr] = useState("");
@@ -105,8 +105,10 @@ export const ReadPanel = ({
           <div className={`role-result ${hasRole ? "has" : "nope"}`}>
             {hasRole ? `✓ Has ${selectedRole}` : `✕ Does not have ${selectedRole}`}
           </div>
+          
         )}
       </div>
+      <span style={{display: "none"}}>{balResult}</span>
     </div>
   );
 };
